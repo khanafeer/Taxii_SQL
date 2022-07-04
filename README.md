@@ -1,6 +1,6 @@
-# Taxii_SQLC
+# Taxii_SQL
 
-Taxii Splunk Qradar Logrythm Connector
+Taxii Splunk Qradar logrhythm Connector
 This script helps you to Pull feeds from Taxii server and Push to SIEM solutions,
 as the current implementation SIEM TI applications have alot of issues with the Taxii 2.
 
