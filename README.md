@@ -31,3 +31,7 @@ python3 main.py
 ### Next Steps
 - [ ] Logrhythm Support
 - [ ] Performance Enhancement
+- [ ] put taxii server in config file
+- [ ] add the first start option and pulling interval for each customer
+- [ ] put each customer in a seperate thread
+- [ ] use logging library not print
