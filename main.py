@@ -1,27 +1,31 @@
 import time
 import datetime
 import sys
+import json
 
 from Taxii import TaxiiCollection
-
-FIRST = True
-if FIRST:
-    date_time = datetime.date(year=2018, month=1, day=1)
-else:
-    date_time = datetime.datetime.now()
 
 while True:
     try:
         # enable file logging
         # log_file = open("error.log", "a+")
         # sys.stdout = log_file
-        print("[INFO] Running The Thread Class")
-        collection = TaxiiCollection(taxii_url="http://127.0.0.1:8443/taxii2/root/collections/",
-                                   collection="c69c0965-831a-466a-a7c2-4cf82f02393c",
-                                   taxii_user="user@domain.com",
-                                   taxii_pass="TI@123",
-                                   date_time= date_time)
-        collection.run()
+        try:
+            config = json.loads(open("config.conf").read())
+            taxii = config.get("taxii")
+            customers = config.get("customers")
+            print("[INFO] Running The Thread Class")
+            for customerk, customerv in customers.items():
+                print("[INFO] Selecting Customer --", customerk)
+                collection = TaxiiCollection(taxii_url=taxii.get("taxii_url"),
+                                         collection=taxii.get("collection"),
+                                         taxii_user=taxii.get("taxii_user"),
+                                         taxii_pass=taxii.get("taxii_pass"),
+                                        customer_name=customerk,
+                                         customer= customerv)
+                collection.run()
+        except Exception as ex:
+            print("[ERROR] Customers Config File Error (JSON Only) -- ", ex)
     except Exception as ex:
         print("[ERROR] Threading Error --", ex)
     finally:

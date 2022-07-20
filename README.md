@@ -28,6 +28,11 @@ FIRST = False
 python3 main.py
 ```
 
+### Last Update -- 20_Jul_22
+1. adding taxii in the config file
+2. adding the first start in config file for each customer
+3. 
+
 ### Next Steps
 - [ ] Logrhythm Support
 - [ ] Performance Enhancement
