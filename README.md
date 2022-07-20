@@ -1,6 +1,6 @@
-# Taxii_SQLC
+# Taxii_SQL
 
-Taxii Splunk Qradar Logrythm Connector
+Taxii Splunk Qradar logrhythm Connector
 This script helps you to Pull feeds from Taxii server and Push to SIEM solutions,
 as the current implementation SIEM TI applications have alot of issues with the Taxii 2.
 
@@ -36,3 +36,7 @@ python3 main.py
 ### Next Steps
 - [ ] Logrhythm Support
 - [ ] Performance Enhancement
+- [ ] put taxii server in config file
+- [ ] add the first start option and pulling interval for each customer
+- [ ] put each customer in a seperate thread
+- [ ] use logging library not print
